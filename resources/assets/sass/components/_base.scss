@@ -14,10 +14,23 @@ body{
   border:none;
   color:$white;
   .navbar-nav{
+    .dropdown-menu{
+      li a{
+        color:#333333;
+      }
+    }
     li{
       a{
         color:$white;
       }
     }
+    .open{
+      a{
+        background:transparent;
+      }
+    }
+  }
+  .navbar-brand{
+    color:$white;
   }
 }

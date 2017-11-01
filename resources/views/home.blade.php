@@ -6,7 +6,7 @@
         {{ session('status') }}
     </div>
 @endif
-<div class="home">
+<div class="wrap">
     <div class="header">
         <div class="header-content">
             <h1>Ask Me Anything!</h1>
@@ -14,7 +14,8 @@
         </div>
     </div>
     <div class="search">
-        <form method="POST" action="/quote-search" @submit.prevent="onSubmit">
+        <form method="GET" action="/quotes" @submit.prevent="onSearch">
+            {{ csrf_field() }}
             <div class="control">
                 <label for="query" class="label"></label>
                 <input type="text" id="query" class="form-control input-lg" placeholder="What do you need help with?" v-model="query">

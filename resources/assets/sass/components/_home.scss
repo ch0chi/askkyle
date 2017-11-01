@@ -18,7 +18,7 @@
 //    }
 //  }
 //}
-.home{
+.wrap{
   @include flexbox;
   justify-content:center;
   align-items:center;
@@ -62,7 +62,13 @@
     background:$light-orange;
     height:75px;
     form{
-      width:800px;
+      width:100%;
+      padding:1em;
+      @include breakpoint($tab){
+        width:800px;
+        padding:0;
+      }
+
     }
   }
   .results{
@@ -76,6 +82,7 @@
       p{
         font-weight:700;
         font-size:40px;
+        font-style:italic;
         color:$light-blue;
       }
     }

@@ -17,18 +17,20 @@ window.Vue = require('vue');
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+    //todo add props and make this less bad
 const app = new Vue({
     el: '#app',
 
     data:{
         query:'',
         quotes:'',
+        newQuote:'',
         toggleShow:false
     },
 
     methods:{
-        onSubmit(){
-            axios.post('/quote-search',this.$data)
+        onSearch(){
+            axios.get('/quotes',this.$data)
                 .then(response =>
                     this.update(response.data)
                 );
@@ -36,10 +38,31 @@ const app = new Vue({
         update(data){
             this.quotes = shuffle(data,1);
             this.toggleShow = true;
-
+        },
+        onStoreQuote(){
+            axios.post('/quotes', {
+                body:this.newQuote
+            })
+                .then(response =>
+                    this.toggleShow = true,
+                    this.newQuote = '',
+                    setTimeout(() => {
+                        this.toggleShow = false;
+                    }, 3000)
+                )
+                .catch(error =>
+                    console.log(error)
+                );
         }
     }
 });
+
+/**
+ * Randomizes an array within a range.
+ * @param arr
+ * @param range
+ * @returns {*}
+ */
 function shuffle(arr,range){
     if(range === 1){
         let result = arr[Math.floor(Math.random()*arr.length)];

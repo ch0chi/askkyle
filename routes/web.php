@@ -18,6 +18,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
-Route::post('/quote-search', 'QuotesController@index')->name('quotes');
+Route::resource('quotes','QuoteController');
+//Route::post('/quote-search', 'QuotesController@index')->name('quotes');
 

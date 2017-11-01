@@ -29,7 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Home
                     </a>
                 </div>
 
@@ -52,6 +52,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{route('quotes.create')}}">Add Quote</a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

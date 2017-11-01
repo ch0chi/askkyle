@@ -8369,11 +8369,23 @@ body {
   color: #ffffff;
 }
 
+.navbar-default .navbar-nav .dropdown-menu li a {
+  color: #333333;
+}
+
 .navbar-default .navbar-nav li a {
   color: #ffffff;
 }
 
-.home {
+.navbar-default .navbar-nav .open a {
+  background: transparent;
+}
+
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+
+.wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8389,11 +8401,11 @@ body {
           flex-direction: column;
 }
 
-.home > * {
+.wrap > * {
   -ms-flex: 0 1 auto;
 }
 
-.home .header {
+.wrap .header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8416,11 +8428,11 @@ body {
   text-align: center;
 }
 
-.home .header > * {
+.wrap .header > * {
   -ms-flex: 0 1 auto;
 }
 
-.home .header h1 {
+.wrap .header h1 {
   font-family: 'Lobster', cursive;
   color: #ffffff;
   font-size: 50px;
@@ -8428,18 +8440,18 @@ body {
 }
 
 @media (min-width: 768px) {
-  .home .header h1 {
+  .wrap .header h1 {
     margin: 0;
   }
 }
 
 @media (min-width: 1024px) {
-  .home .header h1 {
+  .wrap .header h1 {
     font-size: 70px;
   }
 }
 
-.home .header .header-content {
+.wrap .header .header-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8454,11 +8466,11 @@ body {
       flex-wrap: wrap;
 }
 
-.home .header .header-content > * {
+.wrap .header .header-content > * {
   -ms-flex: 0 1 auto;
 }
 
-.home .search {
+.wrap .search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8473,15 +8485,23 @@ body {
   height: 75px;
 }
 
-.home .search > * {
+.wrap .search > * {
   -ms-flex: 0 1 auto;
 }
 
-.home .search form {
-  width: 800px;
+.wrap .search form {
+  width: 100%;
+  padding: 1em;
 }
 
-.home .results {
+@media (min-width: 768px) {
+  .wrap .search form {
+    width: 800px;
+    padding: 0;
+  }
+}
+
+.wrap .results {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8495,17 +8515,18 @@ body {
   height: 400px;
 }
 
-.home .results > * {
+.wrap .results > * {
   -ms-flex: 0 1 auto;
 }
 
-.home .results li {
+.wrap .results li {
   list-style: none;
 }
 
-.home .results li p {
+.wrap .results li p {
   font-weight: 700;
   font-size: 40px;
+  font-style: italic;
   color: #3494e6;
 }
 

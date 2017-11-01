@@ -964,7 +964,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(42);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
@@ -990,29 +990,51 @@ window.Vue = __webpack_require__(35);
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
+//todo add props and make this less bad
 var app = new Vue({
     el: '#app',
 
     data: {
         query: '',
         quotes: '',
+        newQuote: '',
         toggleShow: false
     },
 
     methods: {
-        onSubmit: function onSubmit() {
+        onSearch: function onSearch() {
             var _this = this;
 
-            axios.post('/quote-search', this.$data).then(function (response) {
+            axios.get('/quotes', this.$data).then(function (response) {
                 return _this.update(response.data);
             });
         },
         update: function update(data) {
             this.quotes = shuffle(data, 1);
             this.toggleShow = true;
+        },
+        onStoreQuote: function onStoreQuote() {
+            var _this2 = this;
+
+            axios.post('/quotes', {
+                body: this.newQuote
+            }).then(function (response) {
+                return _this2.toggleShow = true;
+            }, this.newQuote = '', setTimeout(function () {
+                _this2.toggleShow = false;
+            }, 3000)).catch(function (error) {
+                return console.log(error);
+            });
         }
     }
 });
+
+/**
+ * Randomizes an array within a range.
+ * @param arr
+ * @param range
+ * @returns {*}
+ */
 function shuffle(arr, range) {
     if (range === 1) {
         var result = arr[Math.floor(Math.random() * arr.length)];
@@ -42563,11 +42585,7 @@ exports.clearImmediate = clearImmediate;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(4)))
 
 /***/ }),
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */
+/* 38 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
