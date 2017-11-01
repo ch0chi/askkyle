@@ -12,7 +12,22 @@ class QuotesTableSeeder extends Seeder
     public function run()
     {
       DB::table('quotes')->insert([
-        'body' => 'FYI. The toaster oven is on. Not sure if someone was using it.',
+        'body' => 'Can\'t help you because you shoot video in vertical.',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s")
+      ]);
+      DB::table('quotes')->insert([
+        'body' => 'Bullshit',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s")
+      ]);
+      DB::table('quotes')->insert([
+        'body' => 'Shit, now I\'ve got to take it to the apple store.',
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s")
+      ]);
+      DB::table('quotes')->insert([
+        'body' => 'That sucks, check out my awesome apple watch though.',
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s")
       ]);
