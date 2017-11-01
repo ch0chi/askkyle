@@ -12,37 +12,7 @@ class QuotesTableSeeder extends Seeder
     public function run()
     {
       DB::table('quotes')->insert([
-        'body' => 'have you tried restarting your computer',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s")
-      ]);
-      DB::table('quotes')->insert([
-        'body' => 'have you checked 1password',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s")
-      ]);
-      DB::table('quotes')->insert([
-        'body' => 'google it',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s")
-      ]);
-      DB::table('quotes')->insert([
-        'body' => 'ugh',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s")
-      ]);
-      DB::table('quotes')->insert([
-        'body' => 'this poison ivy is really spreading',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s")
-      ]);
-      DB::table('quotes')->insert([
-        'body' => 'Let\'s chat this morning about it',
-        'created_at' => date("Y-m-d H:i:s"),
-        'updated_at' => date("Y-m-d H:i:s")
-      ]);
-      DB::table('quotes')->insert([
-        'body' => 'God you guys are young',
+        'body' => 'Don\'t squeeze it too hard, especially if you are eating a sandwich.',
         'created_at' => date("Y-m-d H:i:s"),
         'updated_at' => date("Y-m-d H:i:s")
       ]);

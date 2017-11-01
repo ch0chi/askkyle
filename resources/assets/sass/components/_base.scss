@@ -1,13 +1,23 @@
 #app{
-  height:100vh;
   width:auto;
   font-family: 'Open Sans', sans-serif;
   position:relative;
 }
 body{
   font-family: 'Open Sans', sans-serif;
+  background:$dark-white;
 }
 .navbar-default{
   position:absolute;
   width:100%;
+  background:transparent;
+  border:none;
+  color:$white;
+  .navbar-nav{
+    li{
+      a{
+        color:$white;
+      }
+    }
+  }
 }

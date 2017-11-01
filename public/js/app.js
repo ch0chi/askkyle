@@ -995,7 +995,8 @@ var app = new Vue({
 
     data: {
         query: '',
-        quotes: ''
+        quotes: '',
+        toggleShow: false
     },
 
     methods: {
@@ -1008,10 +1009,15 @@ var app = new Vue({
         },
         update: function update(data) {
             this.quotes = shuffle(data, 1);
+            this.toggleShow = true;
         }
     }
 });
 function shuffle(arr, range) {
+    if (range === 1) {
+        var result = arr[Math.floor(Math.random() * arr.length)];
+        return result;
+    }
     var randIndex = void 0,
         temp = void 0;
     for (var i = arr.length - 1; i > 0; i--) {

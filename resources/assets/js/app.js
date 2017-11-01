@@ -22,7 +22,8 @@ const app = new Vue({
 
     data:{
         query:'',
-        quotes:''
+        quotes:'',
+        toggleShow:false
     },
 
     methods:{
@@ -34,10 +35,16 @@ const app = new Vue({
         },
         update(data){
             this.quotes = shuffle(data,1);
+            this.toggleShow = true;
+
         }
     }
 });
 function shuffle(arr,range){
+    if(range === 1){
+        let result = arr[Math.floor(Math.random()*arr.length)];
+        return result;
+    }
     let randIndex,temp;
     for(let i = arr.length-1;i>0;i--){ //arr starts at last elm in arr
         randIndex = Math.floor(Math.random()*(i+1)); //rand index
@@ -46,5 +53,4 @@ function shuffle(arr,range){
         arr[randIndex] = temp; //set random index back to what index was, for loop will now move down one
     }
     return arr.splice(0,range);//set range to get
-
 }
