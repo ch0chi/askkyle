@@ -23,11 +23,11 @@
         </form>
     </div>
     <div class="results">
-        <ul id="quotes">
+        <ul id="quotes" class="speech-bubble" v-show="toggleShow"  v-cloak>
             <li v-show="toggleShow" v-if="quotes.length = 1">
-                <p>"@{{ quotes.body }}"</p>
+                <p>@{{ quotes.body }}</p>
             </li>
-            <li v-show="toggleShow" v-else v-for="quote in quotes">
+            <li v-show="toggleShow" v-else v-for="quote in quotes"  v-cloak>
                 <p>"@{{quote.body}}"</p>
             </li>
         </ul>
