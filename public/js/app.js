@@ -1008,7 +1008,9 @@ var app = new Vue({
 
             this.toggleTyping = true;
             axios.get('/quotes', this.$data).then(function (response) {
-                return _this.update(response.data);
+                return setTimeout(function () {
+                    _this.update(response.data);
+                }, 1000);
             }, this.query = '');
         },
         update: function update(data) {

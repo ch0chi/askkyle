@@ -34,7 +34,9 @@ const app = new Vue({
             this.toggleTyping = true;
             axios.get('/quotes',this.$data)
                 .then(response =>
-                    this.update(response.data),
+                    setTimeout(() => {
+                        this.update(response.data)
+                    },1000),
                     this.query = ''
                 );
         },
