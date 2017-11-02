@@ -23,7 +23,7 @@
         </form>
     </div>
     <div class="results">
-        <div class="chat-bubble" v-show="toggleTyping">
+        <div class="chat-bubble" v-show="toggleTyping" v-cloak>
             <div class="loading">
                 <div class="dot one"></div>
                 <div class="dot two"></div>
