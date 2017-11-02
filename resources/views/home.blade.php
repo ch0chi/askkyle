@@ -23,6 +23,14 @@
         </form>
     </div>
     <div class="results">
+        <div class="chat-bubble" v-show="toggleTyping">
+            <div class="loading">
+                <div class="dot one"></div>
+                <div class="dot two"></div>
+                <div class="dot three"></div>
+            </div>
+            <div class="tail"></div>
+        </div>
         <ul id="quotes" class="speech-bubble" v-show="toggleShow"  v-cloak>
             <li v-show="toggleShow" v-if="quotes.length = 1">
                 <p>@{{ quotes.body }}</p>

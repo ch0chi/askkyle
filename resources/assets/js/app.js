@@ -25,17 +25,21 @@ const app = new Vue({
         query:'',
         quotes:'',
         newQuote:'',
-        toggleShow:false
+        toggleShow:false,
+        toggleTyping:false
     },
 
     methods:{
         onSearch(){
+            this.toggleTyping = true;
             axios.get('/quotes',this.$data)
                 .then(response =>
-                    this.update(response.data)
+                    this.update(response.data),
+                    this.query = ''
                 );
         },
         update(data){
+            this.toggleTyping = false;
             this.quotes = shuffle(data,1);
             this.toggleShow = true;
         },
